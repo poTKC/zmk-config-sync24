@@ -80,6 +80,11 @@
             bindings = <&studio_unlock>;
             key-positions = <36 37 46 47>;
         };
+
+        mo_num {
+            bindings = <&mo 2>;
+            key-positions = <14 15>;
+        };
     };
 
     macros {
