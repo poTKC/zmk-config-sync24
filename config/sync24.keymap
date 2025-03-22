@@ -16,13 +16,13 @@
 
         combo_us {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <26 25>;
             bindings = <&kp LANG2>;
         };
 
         combo_kana {
             timeout-ms = <50>;
-            key-positions = <33 32>;
+            key-positions = <33 34>;
             bindings = <&kp LANG1>;
         };
 
@@ -92,14 +92,14 @@
     };
 
     behaviors {
-        ht_bl: ht_bl {
+        ht_tp: ht_tp {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_BL";
+            label = "HT_TP";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             hold-while-undecided;
         };
     };
@@ -112,9 +112,9 @@
         base {
             display-name = "Base";
             bindings = <
-&kp Q            &kp W     &kp E           &kp R        &kp T            &mo 4  &none  &kp Y            &kp U         &kp I           &kp O           &kp P
-&ht_bl LCTRL A   &kp S     &kp D           &kp F        &kp G            &none  &none  &kp H            &kp J         &kp K           &kp L           &ht_bl RCTRL MINUS
-&ht_bl LSHIFT Z  &kp X     &kp C           &kp V        &kp B            &none  &none  &kp N            &kp M         &kp COMMA       &kp DOT         &ht_bl RSHIFT SLASH
+&kp Q            &kp W     &kp E           &kp R        &kp T            &none  &none  &kp Y            &kp U         &kp I           &kp O           &kp P
+&ht_tp LCTRL A   &kp S     &kp D           &kp F        &kp G            &none  &none  &kp H            &kp J         &kp K           &kp L           &ht_tp RCTRL MINUS
+&ht_tp LSHIFT Z  &kp X     &kp C           &kp V        &kp B            &none  &none  &kp N            &kp M         &kp COMMA       &kp DOT         &ht_tp RSHIFT SLASH
 &mo 2            &kp LALT  &mt LGUI LANG2  &lt 1 SPACE  &lt 3 BACKSPACE  &none  &none  &lt 3 BACKSPACE  &lt 1 RETURN  &mt RGUI LANG1  &kp LEFT_ARROW  &kp RIGHT
             >;
         };
@@ -158,6 +158,15 @@
 &studio_unlock  &none         &none         &none         &none         &none       &none  &none  &none  &none  &none  &none
 &none           &none         &none         &none         &none         &none       &none  &none  &none  &none  &none  &none
 &none           &none         &none         &none         &none         &none       &none  &none  &none  &none  &none  &none
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
