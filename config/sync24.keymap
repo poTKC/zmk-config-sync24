@@ -106,6 +106,20 @@
             tapping-term-ms = <150>;
             flavor = "tap-preferred";
             hold-while-undecided;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
+        };
+
+        lt_tp: lt_tp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_TP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            require-prior-idle-ms = <50>;
+            hold-while-undecided;
         };
     };
 
@@ -117,20 +131,20 @@
         base {
             display-name = "Base";
             bindings = <
-&kp Q            &kp W         &kp E           &kp R        &kp T            &none  &none  &kp Y            &kp U         &kp I           &kp O     &kp P
-&ht_tp LCTRL A   &kp S         &kp D           &kp F        &kp G            &none  &none  &kp H            &kp J         &kp K           &kp L     &ht_tp RCTRL MINUS
-&ht_tp LSHIFT Z  &kp X         &kp C           &kp V        &kp B            &none  &none  &kp N            &kp M         &kp COMMA       &kp DOT   &ht_tp RSHIFT SLASH
-&mo 2            &kp LEFT_ALT  &mt LGUI LANG2  &lt 1 SPACE  &lt 3 BACKSPACE  &none  &none  &lt 3 BACKSPACE  &lt 1 RETURN  &mt RGUI LANG2  &kp LEFT  &kp RIGHT
+&kp Q            &kp W         &kp E           &kp R           &kp T               &none  &none  &kp Y               &kp U            &kp I           &kp O     &kp P
+&ht_tp LCTRL A   &kp S         &kp D           &kp F           &kp G               &none  &none  &kp H               &kp J            &kp K           &kp L     &ht_tp RCTRL MINUS
+&ht_tp LSHIFT Z  &kp X         &kp C           &kp V           &kp B               &none  &none  &kp N               &kp M            &kp COMMA       &kp DOT   &ht_tp RSHIFT SLASH
+&mo 2            &kp LEFT_ALT  &mt LGUI LANG2  &lt_tp 1 SPACE  &lt_tp 3 BACKSPACE  &none  &none  &lt_tp 3 BACKSPACE  &lt_tp 1 RETURN  &mt RGUI LANG1  &kp LEFT  &kp RIGHT
             >;
         };
 
         symbol {
             display-name = "symbol";
             bindings = <
-&kp EXCL    &kp AT  &kp HASH   &kp DOLLAR         &kp PERCENT       &none   &none    &kp CARET             &kp AMPERSAND          &kp ASTERISK      &kp PLUS           &kp EQUAL
-&kp LCTRL   &none   &kp TILDE  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none   &none    &kp COLON             &kp SEMI               &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp UNDER
-&kp LSHIFT  &none   &none      &kp EQUAL          &kp PLUS          &none   &none    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp QUESTION
-&trans      &trans  &trans     &trans             &trans            &trans  &kp F20  &space_retuen         &trans                 &kp DOWN_ARROW    &kp UP_ARROW       &trans
+&kp EXCL    &kp AT  &kp HASH   &kp DOLLAR         &kp PERCENT       &none   &none  &kp CARET             &kp AMPERSAND          &kp ASTERISK      &kp PLUS           &kp EQUAL
+&kp LCTRL   &none   &kp TILDE  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none   &none  &kp COLON             &kp SEMI               &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp UNDER
+&kp LSHIFT  &none   &none      &kp EQUAL          &kp PLUS          &none   &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp QUESTION
+&trans      &trans  &trans     &trans             &trans            &trans  &none  &kp F20               &space_retuen          &trans            &kp DOWN           &kp UP_ARROW
             >;
         };
 
@@ -150,7 +164,7 @@
 &kp ESCAPE  &none               &kp LC(UP_ARROW)  &none          &none   &kp F15  &none   &kp RG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &kp ESCAPE
 &kp LCTRL   &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT)  &none   &kp F14  &none   &kp LEFT_ARROW      &kp DOWN            &kp UP_ARROW      &kp RIGHT      &kp TAB
 &kp LSHFT   &none               &kp LC(LA(S))     &none          &none   &kp F13  &none   &kp RA(LEFT_ARROW)  &kp RA(DOWN)        &kp RA(UP_ARROW)  &kp RA(RIGHT)  &kp RSHIFT
-&trans      &trans              &trans            &trans         &trans  &trans   &trans  &kp F15             &trans              &kp DOWN_ARROW    &kp UP_ARROW   &none
+&trans      &trans              &trans            &trans         &trans  &trans   &trans  &kp F15             &kp F15             &trans            &kp DOWN       &kp UP_ARROW
             >;
 
             label = "arrow";
