@@ -155,9 +155,9 @@
         arrow {
             status = "reserved";
             bindings = <
-&kp ESCAPE  &none               &kp LC(UP_ARROW)  &none          &kp F15        &none   &none   &kp RG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &kp ESCAPE
+&kp ESCAPE  &none               &kp LC(UP_ARROW)  &none          &kp F15        &none   &none   &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &kp ESCAPE
 &kp LCTRL   &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT)  &kp F14        &none   &none   &kp LEFT_ARROW      &kp DOWN            &kp UP_ARROW      &kp RIGHT      &kp TAB
-&kp LSHFT   &none               &kp LC(LA(S))     &none          &kp F13        &none   &none   &kp RA(LEFT_ARROW)  &kp RA(DOWN)        &kp RA(UP_ARROW)  &kp RA(RIGHT)  &kp RSHIFT
+&kp LSHFT   &none               &kp LC(LA(S))     &none          &kp F13        &none   &none   &kp LA(LEFT_ARROW)  &kp LA(DOWN)        &kp LA(UP_ARROW)  &kp LA(RIGHT)  &kp RSHIFT
 &trans      &trans              &trans            &kp F15        &kp BACKSPACE  &trans  &trans  &kp BACKSPACE       &kp F15             &trans            &trans         &kp LC(ESCAPE)
             >;
 
